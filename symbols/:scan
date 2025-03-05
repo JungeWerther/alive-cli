@@ -1,0 +1,13 @@
+{
+"_gateway (10.1.1.2)": [{"port": 53, "info": "open  domain"},{"port": 8291, "info": "open  unknown"}],
+"10.1.1.152": [{"port": 22, "info": "open  ssh"}],
+"10.1.1.161": [{"port": 22, "info": "open  ssh"}],
+"10.1.1.162": [{"port": 22, "info": "open  ssh"}],
+"10.1.1.171": [{"port": 22, "info": "open  ssh"}],
+"10.1.1.163": [{"port": 22, "info": "open  ssh"}],
+"10.1.1.165": [{"port": 22, "info": "open  ssh"},{"port": 3000, "info": "open  http"}],
+"JungeWerther (10.1.1.197)": [],
+"10.1.1.200": [{"port": 22, "info": "open  ssh"}],
+"10.1.1.251": [{"port": 80, "info": "open  http"},{"port": 443, "info": "open  https"},{"port": 515, "info": "open  printer"},{"port": 631, "info": "open  ipp"},{"port": 8080, "info": "open  http-proxy"},{"port": 9100, "info": "open  jetdirect"}],
+"10.1.1.252": [{"port": 22, "info": "open  ssh"},{"port": 80, "info": "open  http"},{"port": 139, "info": "open  netbios-ssn"},{"port": 443, "info": "open  https"},{"port": 445, "info": "open  microsoft-ds"},{"port": 873, "info": "open  rsync"},{"port": 3261, "info": "open  winshadow"},{"port": 5000, "info": "open  upnp"},{"port": 5001, "info": "open  commplex-link"},{"port": 5357, "info": "open  wsdapi"}]
+}

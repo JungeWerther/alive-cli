@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# Configuration
+
+# basepath of executable
+basepath=$(cd `dirname $(readlink -f $0)`; pwd)
+source "$basepath/lib/helpers.sh"
+
+# Try to load variables from .env.local first
+if [[ -f "$basepath/.env.local" ]]; then
+  source "$basepath/.env.local"
+else
+  message "No .env.local found, using defaults"
+fi
+
+# can be sourced by other scripts
+functions="$basepath/cli/functions/project.sh"
+
+# Main script file: alive
+command=$1  # First argument is the command
+shift
+
+# Parse flags
+while [ "$1" != "" ]; do
+    case $1 in
+        --*)
+            flags="${1#--}"
+            shift
+            ;;
+        -*)
+            flags="${1#-}"
+            shift
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+
+
+source_script() {
+    local script_name="$1"
+    local full_path="$basepath/cli/$script_name"
+
+    export script_name
+
+    if [ -f "$full_path" ]; then
+    source "$full_path" "$@"
+    else
+        error "Error: $script_name not found in cli directory. Available scripts: $(ls $basepath/cli/*.sh | sed 's/.*\///' | sed 's/.sh//')"
+        exit 1
+    fi
+}
+
+# if the flag is --help or -h: show help
+if [ "$flags" = "help" ] || [ "$flags" = "h" ]; then
+    source_script "help.sh"
+    exit 0
+fi
+
+source_script "${command}.sh" "$@"

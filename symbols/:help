@@ -1,0 +1,13 @@
+📚  Alive CLI
+Usage:
+    alive <command>     - Execute a command
+    alive [--help, -h]  - Show this help message
+
+Commands:
+    init                - Initialize configuration
+    deploy              - Deploy configuration
+    start               - Start the server
+    ls                  - List templates
+    help                - Show this help message
+    gen <template>      - Generative action from a template
+    stage               - Perform a CI action
