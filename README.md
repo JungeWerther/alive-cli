@@ -10,6 +10,18 @@ git clone https://github.com/yourusername/alive-cli.git
 cd alive-cli
 ```
 
+First, make sure you have `fzf` installed:
+
+### macOS
+```bash
+brew install fzf
+```
+
+### Linux
+```bash
+sudo apt-get install fzf
+```
+
 The easiest way to install is to use the `cli/install.sh` script, which you can access with:
 
 ```bash
@@ -51,8 +63,14 @@ ln -s "$(pwd)/alive" $PREFIX/bin/alive
 
 ## Getting started
 
-```
+1. Create a `.aliverc` config file.
+
+```bash
 alive init
 ```
 
-to create a config file
+
+Commands can either be called directly:
+```
+alive embed: String -> Measurement
+```
