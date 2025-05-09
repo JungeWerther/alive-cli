@@ -208,3 +208,23 @@ find_config() {
   fi
   return 1
 }
+
+get_state_db_path() {
+  local data_dir="$basepath/alive_cli"
+  ensure_dir "$data_dir"
+  echo "$data_dir/state.db"
+}
+
+# write_state: Write key-value pair to SQLite state database
+# @param $1 - Key to store
+# @param $2 - Value to store
+write_state() {
+  cd $basepath/alive_cli && source .venv/bin/activate && echo "$@" | python -m helpers.lib.set_state
+}
+
+# read_state: Read value from SQLite state database by key
+# @param $1 - Key to lookup
+# @return Value if found, empty string if not found
+read_state() {
+  cd $basepath/alive_cli && source .venv/bin/activate && echo "$@" | python -m helpers.lib.get_state
+}

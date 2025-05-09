@@ -8,4 +8,7 @@ dependencies = [
     "httpx>=0.28.1",
     "mcp[cli]>=1.6.0",
     "numpy>=2.2.4",
+    "openwakeword>=0.4.0",
+    "pyautogui>=0.9.54",
+    "realtimestt>=0.3.104",
 ]
