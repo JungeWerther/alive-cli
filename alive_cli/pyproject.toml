@@ -1,0 +1,15 @@
+[project]
+name = "alive-cli"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "hnswlib>=0.8.0",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.6.0",
+    "numpy>=2.2.4",
+    "openwakeword>=0.4.0",
+    "pyautogui>=0.9.54",
+    "realtimestt>=0.3.104",
+]

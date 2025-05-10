@@ -106,3 +106,16 @@ find_config() {
 }
 
 find_config
+
+# ---------
+# start API
+# ---------
+
+if [[ -f ".aliverc" ]]; then
+    cat ./.aliverc
+else
+    echo -e "\033[1;31mNo .aliverc file found in current directory\033[0m"
+    ls -la
+    echo "------------------------"
+    pwd
+fi
